@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "lib": ["es6"],
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "removeComments": true,
+    "baseUrl": "./",
+    "rootDir": "./",
+    "isolatedModules": false,
+    "allowJs": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "typeRoots": ["./src/main/types", "./node_modules/@types"]
+  },
+  "include": ["src/"]
+}
