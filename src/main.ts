@@ -1,7 +1,16 @@
-import express from "express";
+import { Environment } from "./infra/config/env";
+import makeApp from "./infra/config/server";
 
-const app = express();
+process.env.TZ = "UTC";
 
-app.listen(3000, () => {
-  console.log("Running on port 3000");
-});
+const makeServer = async () => {
+  const app = await makeApp();
+
+  app.listen(Environment.infrastructure.server.port, () => {
+    console.info({
+      message: `Server running on port ${Environment.infrastructure.server.port}!`,
+    });
+  });
+};
+
+makeServer();
