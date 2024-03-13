@@ -1,3 +1,4 @@
+import { ElementHandle } from "puppeteer";
 import {
   ICookie,
   ICrawler,
@@ -14,6 +15,10 @@ export class CrawlerAdapterHandlePage implements ICrawlerAdapterPage {
     const newPage = await this.browser.newPage();
     this.page = newPage;
     return newPage;
+  }
+
+  public async getElement(selector: string): Promise<ElementHandle<Element>> {
+    return this.page.$(selector);
   }
 
   public async close(): Promise<void> {

@@ -33,6 +33,7 @@ export interface ICrawlerAdapterPage {
   goToUrl(page: string): Promise<void>;
   getUrl(): string;
   cookies(): Promise<ICookie[]>;
+  getElement(selector: string): Promise<puppeteer.ElementHandle>;
   setCookie(cookies: ICookie[]): Promise<void>;
   getPages(): Promise<ICrawler["page"][]>;
   waitForLoadNetwork(timeout?: number): Promise<void>;
